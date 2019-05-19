@@ -113,9 +113,9 @@
 }
 
 @include mediaXSm {
-  main {
+  main#home {
     padding: 0.2rem;
-    #home h1 {
+    h1 {
       margin-top: 10vh;
     }
 
