@@ -320,20 +320,20 @@ main {
         color: #000; } }
 
 @media screen and (max-width: 400px) {
-  main {
+  main#home {
     padding: 0.2rem; }
-    main #home h1 {
+    main#home h1 {
       margin-top: 10vh; }
-    main .lg-heading {
+    main#home .lg-heading {
       float: left;
       margin-top: 1rem;
       font-size: 4vh;
       writing-mode: vertical-lr;
       text-orientation: upright;
       text-transform: uppercase; }
-    main .sm-heading {
+    main#home .sm-heading {
       margin-top: 35vh;
       vertical-align: middle;
       background: none; }
-    main .icons {
+    main#home .icons {
       vertical-align: center; } }
