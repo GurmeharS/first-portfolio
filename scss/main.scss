@@ -110,7 +110,11 @@ main {
     padding: 0.5rem;
     border-bottom: $secondary-color 5px solid;
     h6 {
-      font-size: 0.7rem;
+      display: inline-block;
+      font-size: 0.8rem;
+      &.date {
+        float: right;
+      }
     }
   }
 }
@@ -135,7 +139,7 @@ main {
   }
 }
 
-// Contage Page
+// Contact Page
 .boxes {
   display: flex;
   flex-wrap: wrap;
