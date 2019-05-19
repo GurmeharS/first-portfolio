@@ -9,6 +9,7 @@ $bg-opacity: 0.9;
 }
 
 @mixin background {
+  background: $primary-color;
   @if $show-home-image {
     &#bg-img {
       background: $home-image;
@@ -28,6 +29,15 @@ $bg-opacity: 0.9;
     }
   } @else {
     background: $primary-color;
+  }
+}
+
+// Set Text Colour Function
+@function set-text-color($color) {
+  @if (lightness($color) > 40) {
+    @return #000;
+  } @else {
+    @return #fff;
   }
 }
 
