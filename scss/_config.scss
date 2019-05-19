@@ -1,5 +1,5 @@
 $primary-color: #444;
-$secondary-color: #eece1a;
+$secondary-color: #ee801a;
 $show-home-image: true;
 $home-image: url(../img/background.jpg);
 $bg-opacity: 0.9;
@@ -28,5 +28,30 @@ $bg-opacity: 0.9;
     }
   } @else {
     background: $primary-color;
+  }
+}
+
+// Media Query Mixins:
+@mixin mediaSm {
+  @media screen and (max-width: 500px) {
+    @content;
+  }
+}
+
+@mixin mediaMed {
+  @media screen and (max-width: 768px) {
+    @content;
+  }
+}
+
+@mixin mediaLg {
+  @media screen and (min-width: 769px) and (max-width: 1170px) {
+    @content;
+  }
+}
+
+@mixin mediaXL {
+  @media screen and (min-width: 1171px) {
+    @content;
   }
 }
