@@ -187,7 +187,10 @@ main {
     padding: 0.5rem;
     border-bottom: #ee801a 5px solid; }
     .about-info .job h6 {
-      font-size: 0.7rem; }
+      display: inline-block;
+      font-size: 0.8rem; }
+      .about-info .job h6.date {
+        float: right; }
 
 .projects {
   display: grid;
@@ -291,6 +294,13 @@ main {
     grid-template-columns: repeat(2, 1fr); } }
 
 @media screen and (max-width: 500px) {
+  main {
+    padding: 2rem; }
+    main #home h1 {
+      margin-top: 10vh; }
+    main .lg-heading {
+      margin-top: 1rem;
+      font-size: 5rem; }
   main#home h1 {
     margin-top: 10vh; }
   .projects {
