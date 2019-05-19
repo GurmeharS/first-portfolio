@@ -120,8 +120,21 @@
     }
 
     .lg-heading {
+      float: left;
       margin-top: 1rem;
-      font-size: 1rem;
+      font-size: 4vh;
+      writing-mode: vertical-lr;
+      text-orientation: upright;
+      text-transform: uppercase;
+    }
+
+    .sm-heading {
+      margin-top: 35vh;
+      vertical-align: middle;
+      background: none;
+    }
+    .icons {
+      vertical-align: center;
     }
   }
 }
