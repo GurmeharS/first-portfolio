@@ -1,0 +1,145 @@
+// Widescreens:
+
+@include mediaXL {
+  .projects {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+// Desktop/Laptop:
+@include mediaLg {
+  .projects {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+// Tablets
+@include mediaMed {
+  main {
+    align-items: center;
+    text-align: center;
+
+    .lg-heading {
+      line-height: 1;
+      margin-bottom: 1rem;
+    }
+  }
+
+  ul.menu-nav,
+  div.menu-branding {
+    float: none;
+    width: 100%;
+    min-height: 0;
+
+    &.show {
+      transform: translate3d(0, 0, 0);
+    }
+  }
+
+  .menu-nav {
+    height: 75vh;
+    transform: translate3d(-100%, 0, 0);
+    font-size: 24px;
+  }
+
+  .menu-branding {
+    height: 25vh;
+    transform: translate3d(100%, 0, 0);
+    background-size: cover; /* Generic*/
+
+    .portrait {
+      background: url("../img/portrait.png") no-repeat center;
+      background-size: contain;
+      width: 23vh;
+      height: 23vh;
+    }
+  }
+
+  .about-info {
+    grid-template-areas:
+      "bioimage"
+      "bio"
+      "job1"
+      "job2";
+
+    grid-template-columns: 1fr;
+  }
+
+  .projects {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+// Smartphones
+@include mediaSm {
+  main {
+    padding: 1rem;
+    #home h1 {
+      margin-top: 10vh;
+    }
+
+    .lg-heading {
+      margin-top: 1rem;
+      font-size: 4rem;
+    }
+  }
+
+  main#home h1 {
+    margin-top: 10vh;
+  }
+
+  .projects {
+    grid-template-columns: 1fr;
+  }
+
+  .boxes {
+    div {
+      font-size: 2rem;
+      border: 3px #ffffff solid;
+      padding: 1.5rem 2.5rem;
+      margin-bottom: 3rem;
+      font-size: 100%;
+      @include easeOut;
+      &:hover {
+        padding: 0.5 1.5;
+        background: $secondary-color;
+        color: set-text-color($secondary-color);
+        span {
+          color: set-text-color($secondary-color);
+        }
+      }
+    }
+  }
+
+  .menu {
+    .portrait {
+    }
+  }
+}
+
+@include mediaXSm {
+  main#home {
+    padding: 0.2rem;
+    h1 {
+      margin-top: 10vh;
+    }
+
+    .lg-heading {
+      float: left;
+      font-size: 4vh;
+      writing-mode: vertical-lr;
+      text-orientation: upright;
+      text-transform: uppercase;
+    }
+
+    .sm-heading {
+      border-top: none;
+      margin-top: 35vh;
+      vertical-align: middle;
+      background: none;
+    }
+    .icons {
+      vertical-align: center;
+    }
+  }
+}

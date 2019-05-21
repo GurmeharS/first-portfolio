@@ -1,0 +1,107 @@
+// $primary-color: #fbeaeb;
+// $secondary-color: #2f3c7e;
+$show-home-image: true;
+$home-image: url(../img/background.jpg);
+$bg-opacity: 0.9;
+$schemes: (
+  hot: (
+    primary: #fce77d,
+    secondary: #f96167
+  ),
+  purp: (
+    primary: #3d155f,
+    secondary: #df678c
+  ),
+  peachy: (
+    primary: #f0a07c,
+    secondary: #4a274f
+  ),
+  pnb: (
+    primary: #fbeaeb,
+    secondary: #2f3c7e
+  ),
+  hellish: (
+    primary: #1d1b1b,
+    secondary: #ec4d37
+  ),
+  turq: (
+    primary: #8bd8bd,
+    secondary: #243665
+  )
+);
+
+// //Pick colors:
+// $keys: map-keys($schemes);
+// $index: random(6);
+// $scheme: nth($keys, $index);
+$currScheme: turq;
+$primary-color: map-get(map-get($schemes, $currScheme), primary);
+$secondary-color: map-get(map-get($schemes, $currScheme), secondary);
+
+@mixin easeOut {
+  transition: all 0.5s ease-out;
+}
+
+@mixin background {
+  background: $primary-color;
+  @if $show-home-image {
+    &#bg-img {
+      background: $home-image;
+      background-attachment: fixed;
+      background-size: cover;
+
+      &:after {
+        content: "";
+        background: rgba($primary-color, $bg-opacity);
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+      }
+    }
+  } @else {
+    background: $primary-color;
+  }
+}
+
+// Set Text Colour Function
+@function set-text-color($color) {
+  @if (lightness($color) > 40) {
+    @return #000;
+  } @else {
+    @return #fff;
+  }
+}
+
+// Media Query Mixins:
+@mixin mediaXSm {
+  @media screen and (max-width: 400px) {
+    @content;
+  }
+}
+
+@mixin mediaSm {
+  @media screen and (max-width: 500px) {
+    @content;
+  }
+}
+
+@mixin mediaMed {
+  @media screen and (max-width: 768px) {
+    @content;
+  }
+}
+
+@mixin mediaLg {
+  @media screen and (min-width: 769px) and (max-width: 1170px) {
+    @content;
+  }
+}
+
+@mixin mediaXL {
+  @media screen and (min-width: 1171px) {
+    @content;
+  }
+}
