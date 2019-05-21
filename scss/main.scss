@@ -32,7 +32,7 @@ h3 {
   &.sm-heading {
     margin-bottom: 2rem;
     padding: 0.2rem 1rem;
-    background: rgba(lighten($primary-color, 0.5), 0.5);
+    border-top: 2px solid $secondary-color;
   }
 }
 
@@ -94,7 +94,9 @@ main {
 
   .bio {
     grid-area: bio;
-    font-size: 1.5rem;
+    font-size: 1rem;
+    font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+      "Lucida Sans", Arial, sans-serif;
   }
 
   .job-1 {
@@ -111,11 +113,41 @@ main {
     border-bottom: $secondary-color 5px solid;
     h6 {
       display: inline-block;
-      font-size: 0.8rem;
+      font-size: 0.7rem;
+      font-weight: normal;
       &.date {
         float: right;
       }
     }
+
+    .company {
+      grid-area: company;
+      font-weight: bold;
+      text-align: center;
+    }
+
+    .position {
+      grid-area: pos;
+      text-align: left;
+      margin-left: 0.2rem;
+    }
+    .date {
+      grid-area: date;
+      text-align: right;
+      margin-right: 0.2rem;
+    }
+    .summary {
+      grid-area: summary;
+      text-align: left;
+      padding: 0.2rem;
+    }
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-areas:
+      "company company company"
+      "pos . date"
+      "summary summary summary";
   }
 }
 
@@ -125,16 +157,18 @@ main {
   grid-gap: 0.7rem;
   grid-template-columns: repeat(3, 1fr);
 
-  img {
-    width: 100%;
-    border: 3px #fff solid;
-    border-radius: 5%;
-
-    &:hover {
-      opacity: 0.5;
-      border-color: $secondary-color;
-      border-radius: 20%;
-      @include easeOut;
+  .item {
+    img {
+      width: 100%;
+      border: 3px #fff solid;
+      border-radius: 5%;
+      position: relative;
+      &:hover {
+        opacity: 0.5;
+        border-color: $secondary-color;
+        border-radius: 20%;
+        @include easeOut;
+      }
     }
   }
 }

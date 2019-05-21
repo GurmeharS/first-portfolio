@@ -50,8 +50,8 @@
     .portrait {
       background: url("../img/portrait.png") no-repeat center;
       background-size: contain;
-      width: 150px;
-      height: 150px;
+      width: 23vh;
+      height: 23vh;
     }
   }
 
@@ -110,6 +110,11 @@
       }
     }
   }
+
+  .menu {
+    .portrait {
+    }
+  }
 }
 
 @include mediaXSm {
@@ -121,7 +126,6 @@
 
     .lg-heading {
       float: left;
-      margin-top: 1rem;
       font-size: 4vh;
       writing-mode: vertical-lr;
       text-orientation: upright;
@@ -129,6 +133,7 @@
     }
 
     .sm-heading {
+      border-top: none;
       margin-top: 35vh;
       vertical-align: middle;
       background: none;

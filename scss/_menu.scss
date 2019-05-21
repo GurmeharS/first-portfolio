@@ -44,7 +44,6 @@
   position: fixed;
   top: 0;
   width: 100%;
-  opacity: 0.89;
   visibility: hidden;
 
   &.show {
@@ -66,6 +65,7 @@
   &-nav {
     margin: 0;
     padding: 0;
+    opacity: 0.89;
     background: darken($primary-color, 5);
     list-style: none;
     transform: translate3d(0, -100%, 0);
@@ -79,6 +79,7 @@
 
   &-branding {
     background: $primary-color;
+    opacity: 0.95;
     list-style: none;
     transform: translate3d(0, 100%, 0);
     @include easeOut;
