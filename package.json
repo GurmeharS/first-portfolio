@@ -6,7 +6,7 @@
   "homepage": "https://gurmehars.github.io/portfolio",
   "scripts": {
     "sass": "node-sass -w scss/ -o css/ --recursive",
-    "deploy": "gh-pages"
+    "deploy": "gh-pages -d ."
   },
   "author": "Gurmehar Sandhu",
   "license": "MIT",
